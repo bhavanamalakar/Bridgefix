@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.timezone import now
-import random
 
 class OTPModel(models.Model):
     email = models.EmailField(unique=True)
@@ -14,7 +13,7 @@ class OTPModel(models.Model):
     def __str__(self):
         return f"{self.email} - {self.otp}"
     
-    
+
 
 
 
