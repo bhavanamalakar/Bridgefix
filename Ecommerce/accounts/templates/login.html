@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h2 class="mb-3 text-center">Login</h2>
+        <h5 class="text-center text-muted mb-4">Enter your login credentials</h5>
+
+        <form method="post" class="card p-4 shadow-sm bg-white">
+            {% csrf_token %}
+            <div class="mb-2">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Login</button>
+        </form>
+
+        <p class="mt-3 text-center">
+            <a href="{% url 'register_view' %}">ResetPassword</a>
+        </p>
+
+        <p class="mt-3 text-center">
+            Not registered? 
+            <a href="{% url 'register_view' %}">Create an account</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
